@@ -5,6 +5,6 @@
 [Ll]og/
 [Ll]ogs/
 
-/data/snippits.db
+*/src/Faff/data/*.db
 
 .vs/
