@@ -1,17 +1,16 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS restore
 WORKDIR /src
-COPY ["Faff.csproj", "Program.cs", "./"]
+COPY ./src .
 
 RUN dotnet restore -r linux-musl-x64
 
-FROM restore AS build
+FROM restore AS test
 COPY . ./
-RUN dotnet build -o /build -r linux-musl-x64 --self-contained false --no-restore 
-
-FROM build AS test
+RUN dotnet build -o /build
 RUN dotnet test -r linux-musl-x64 --no-restore 
 
-FROM build AS publish
+FROM restore AS publish
+RUN dotnet build /src/Faff/Faff.csproj -c release -o /build -r linux-musl-x64  --self-contained false --no-restore
 RUN dotnet publish -c release -o /dist -r linux-musl-x64 --self-contained false --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS runtime
