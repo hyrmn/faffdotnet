@@ -13,7 +13,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./src/Faff.sln
     - name: Build
-      run: dotnet build ./src/Faff.sn --no-restore
+      run: dotnet build ./src/Faff.sln --no-restore
     - name: Test
       run: dotnet test ./src/Faff.Tests/Faff.Tests.csproj      
     - run: echo "🍏 This job's status is ${{ job.status }}."
