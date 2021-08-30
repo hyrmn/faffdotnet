@@ -6,8 +6,8 @@ RUN dotnet restore -r linux-musl-x64
 
 FROM restore AS test
 COPY . ./
-RUN dotnet build -o /build
-RUN dotnet test -r linux-musl-x64 --no-restore 
+RUN dotnet build --no-restore
+RUN dotnet test -r linux-musl-x64 --no-restore --no-build
 
 FROM restore AS publish
 RUN dotnet build /src/Faff/Faff.csproj -c release -o /build -r linux-musl-x64  --self-contained false --no-restore

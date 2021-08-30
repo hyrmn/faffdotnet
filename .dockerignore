@@ -1,11 +1,11 @@
 .git
 *.user
 
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+**/[Bb]in/
+**/[Oo]bj/
+**/[Ll]og/
+**/[Ll]ogs/
 
-/data/snippits.db
+*/src/Faff/data/*.db
 
 .vs/
