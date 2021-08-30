@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  site:
+    build: .
+    image: faff
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5010:80"
