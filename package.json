@@ -1,0 +1,42 @@
+{
+  "name": "faffdotnet",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean:css": "del-cli ./src/Faff/wwwroot/css/**",
+    "clean:js": "del-cli ./src/Faff/wwwroot/js/**",
+    "clean": "npm-run-all --parallel clean:*",
+    "build:css": "postcss ./src/Faff/css/base.css -o ./src/Faff/wwwroot/css/site.css",
+    "build:js": "echo \"No js\"",
+    "build": "npm run clean && npm-run-all --parallel build:*",
+    "build-prod": "cross-env NODE_ENV=production npm run clean && npm-run-all --parallel build:*",
+    "watch:css": "chokidar ./src/Faff/css/*.* -c \"npm run build:css\"",
+    "watch:app": "browser-sync start --proxy \"localhost:5000\" --files \"./src/Faff/wwwroot/css/**\"",
+    "watch": "npm-run-all --parallel watch:*",
+    "start": "npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyrmn/faffdotnet.git"
+  },
+  "author": "Ben Hyrman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyrmn/faffdotnet/issues"
+  },
+  "homepage": "https://github.com/hyrmn/faffdotnet#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "chokidar-cli": "^2.1.0"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "autoprefixer": "^10.2.4",
+    "cross-env": "^7.0.3",
+    "del-cli": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-purgecss": "^2.0.3",
+    "tailwindcss": "^2.0.3"
+  }
+}

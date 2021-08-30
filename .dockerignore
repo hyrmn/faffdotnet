@@ -9,3 +9,5 @@
 */src/Faff/data/*.db
 
 .vs/
+node_modules
+ wwwroot
