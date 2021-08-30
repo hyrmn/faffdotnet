@@ -11,9 +11,9 @@ jobs:
         dotnet-version: 6.0.100-preview.7.21379.14
         include-prerelease: true
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./src/Faff.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ./src/Faff.sn --no-restore
     - name: Test
       run: dotnet test ./src/Faff.Tests/Faff.Tests.csproj      
     - run: echo "🍏 This job's status is ${{ job.status }}."
