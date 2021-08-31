@@ -27,6 +27,8 @@ This is a playground for a few things. The first was just to try and get a GitHu
 
 So, from here, I'm going to add some basic HTML flow because I want to bring in [HTMX](https://htmx.org) to play with. And I want to add in some real tests and some integration tests.
 
+Oh, and of course I need to bring in LiteDB since I mentioned it in the first section. And save stuff to it. Fun stuff.
+
 ## Special Thanks
 
 This little app is made possible by:
