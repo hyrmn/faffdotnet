@@ -5,7 +5,7 @@ namespace Faff.Tests
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void a()
         {
             Assert.True(true);
         }

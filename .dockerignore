@@ -10,4 +10,5 @@
 
 .vs/
 node_modules
- wwwroot
+wwwroot
+!wwwroot/.gitkeep

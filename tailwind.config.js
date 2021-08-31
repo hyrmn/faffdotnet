@@ -5,7 +5,7 @@ colors.current = 'currentColor';
 
 module.exports = {
     purge: [
-        './src/Faff/Pages/**/*.cshtml'
+        './src/Pages/**/*.cshtml'
     ],
     darkMode: 'media', // or 'media' or 'class'
     theme: {

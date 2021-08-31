@@ -5,8 +5,9 @@
 [Ll]og/
 [Ll]ogs/
 
-*/src/Faff/data/*.db
+*/src/data/*.db
 
 .vs/
 node_modules
 wwwroot
+!wwwroot/.gitkeep
