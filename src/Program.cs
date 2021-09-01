@@ -1,10 +1,19 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
-builder.Logging.AddConsole().SetMinimumLevel(LogLevel.Debug);
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
+}
+
+app.UseStatusCodePagesWithReExecute("/Error", "?code={0}");
+
 app.UseStaticFiles();
 app.UseAuthorization();
 app.MapRazorPages();

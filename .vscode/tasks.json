@@ -9,7 +9,7 @@
             "type": "shell",
             "args": [
                 "build",
-                "./src/Faff.sln",
+                "./Faff.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

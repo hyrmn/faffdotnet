@@ -29,6 +29,7 @@ COPY --from=publish /dist .
 
 VOLUME /app/data
 
+ENV ASPNETCORE_ENVIRONMENT=production
 ENV ASPNETCORE_URLS http://+:80
 EXPOSE 80
 
