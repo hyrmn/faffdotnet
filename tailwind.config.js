@@ -1,5 +1,8 @@
 ﻿const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+let colors = require('tailwindcss/colors')
+delete colors['lightBlue'] // <-----
+colors = { ...colors, ...{ transparent: 'transparent' } }
+
 colors.transparent = 'transparent';
 colors.current = 'currentColor';
 
