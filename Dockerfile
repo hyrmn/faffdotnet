@@ -7,6 +7,7 @@ RUN npm ci --prefer-offline --no-audit --progress=false
 FROM node-restore AS node-build
 COPY ["postcss.config.js", "tailwind.config.js", "./"]
 COPY ./src/css ./src/css
+COPY ./src/js ./src/js
 COPY ./src/Pages ./src/Pages
 RUN npm run build
 

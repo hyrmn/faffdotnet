@@ -12,7 +12,6 @@
       "commandName": "Project",
       "launchBrowser": true,
       "dotnetRunMessages": "true",
-      "hotReloadProfile": "aspnetcore",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
