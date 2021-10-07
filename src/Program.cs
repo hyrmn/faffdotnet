@@ -8,10 +8,11 @@ builder.Services
 builder.Logging.AddConsole().SetMinimumLevel(LogLevel.Warning);
 
 var app = builder.Build();
-
+Console.WriteLine("Starting");
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+    Console.WriteLine("This is sparta");
 }
 else
 {

@@ -6,10 +6,11 @@
     "clean:js": "del-cli ./src/wwwroot/js/**",
     "clean": "npm-run-all --parallel clean:*",
     "build:css": "postcss ./src/css/site.css -o ./src/wwwroot/css/site.css",
-    "build:js": "esbuild ./src/js/site.js --outfile=./src/wwwroot/js/site.js --bundle",
+    "build:js": "node buildjs.js",
     "build": "npm run clean && npm-run-all --parallel build:*",
     "build-prod": "cross-env NODE_ENV=production npm run clean && npm-run-all --parallel build:*",
     "watch:css": "chokidar ./src/css/*.* -c \"npm run build:css\"",
+    "watch:js": "chokidar ./src/js/*.* -c \"npm run build:js\"",
     "watch:app": "browser-sync start --proxy \"localhost:5000\" --files \"./src/wwwroot/css/**\"",
     "watch": "npm-run-all --parallel watch:*",
     "start": "npm run watch"
@@ -24,22 +25,23 @@
     "url": "https://github.com/hyrmn/faffdotnet/issues"
   },
   "homepage": "https://github.com/hyrmn/faffdotnet#readme",
-  "devDependencies": {
-    "browser-sync": "^2.26.14",
-    "chokidar-cli": "^2.1.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
     "autoprefixer": "^10.2.4",
+    "browser-sync": "^2.27.5",
+    "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "del-cli": "^3.0.1",
     "esbuild": "^0.13.3",
     "htmx.org": "^1.6.0",
+    "hyperscript.org": "^0.8.2",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.8",
     "postcss-cli": "^8.3.1",
     "postcss-purgecss": "^2.0.3",
+    "sweetalert2": "^11.1.7",
     "tailwindcss": "^2.2.16"
   }
 }
